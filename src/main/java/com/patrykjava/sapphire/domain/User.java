@@ -1,4 +1,4 @@
-package com.patrykjava.sapphire.entities;
+package com.patrykjava.sapphire.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

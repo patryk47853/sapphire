@@ -12,3 +12,10 @@ spring:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/realms/sapphire-realm
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: sapphire-group
+      auto-offset-reset: earliest
+    listener:
+      ack-mode: record

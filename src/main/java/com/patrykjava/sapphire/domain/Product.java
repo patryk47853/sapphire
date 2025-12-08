@@ -15,7 +15,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private Long id;
 
     @Column(nullable = false)
     private String name;

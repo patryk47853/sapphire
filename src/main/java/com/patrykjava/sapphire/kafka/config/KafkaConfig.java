@@ -25,6 +25,14 @@ public class KafkaConfig {
     }
 
     @Bean
+    public NewTopic orderCreatedDltTopic() {
+        return TopicBuilder.name("order-created-dlt")
+                .partitions(1)
+                .replicas(1)
+                .build();
+    }
+
+    @Bean
     public ProducerFactory<String, String> producerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");

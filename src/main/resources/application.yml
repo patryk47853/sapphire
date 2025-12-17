@@ -3,15 +3,18 @@ spring:
     url: jdbc:postgresql://localhost:5432/sapphire
     username: admin
     password: welcome
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8080/realms/sapphire-realm
+
   kafka:
     bootstrap-servers: localhost:9092
     consumer:
@@ -19,3 +22,12 @@ spring:
       auto-offset-reset: earliest
     listener:
       ack-mode: record
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
